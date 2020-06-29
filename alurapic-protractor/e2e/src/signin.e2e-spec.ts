@@ -9,19 +9,19 @@ describe('Testando tela Home', () => {
 
   it('deve ir para home', () => {
     signinPage.acessarHome();
-  });
-
-  it('deve verificar url', () => {
-    expect(signinPage.obterUrlAtual()).toBe('http://localhost:4200/#/home');
+    expect(signinPage.obterUrlAtual()).toBe('/home');
   });
 
   it('deve fazer login', () => {
-    expect(signinPage.pegarInput('userName', 'flavio'));
-    expect(signinPage.pegarInput('password', '123'));
-    expect(signinPage.pegarBotaoLogin().click());
+    const nomeUsuario = 'flavio';
+    signinPage.definirValor('userName', nomeUsuario);
+    signinPage.definirValor('password', '123');
+    signinPage.obterBotaoLogin().click();
+
+    expect(signinPage.obterUrlAtual()).toBe(`/user/${nomeUsuario}`);
   });
 
-  // it('should ', function () {
+  // it('atrasar termino da execucao', () => {
   //   let valor = 0;
   //
   //   while (valor < 999999999) {

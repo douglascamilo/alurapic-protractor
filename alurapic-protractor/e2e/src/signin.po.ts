@@ -7,14 +7,17 @@ export class SigninPage {
   }
 
   obterUrlAtual() {
-    return browser.getCurrentUrl();
+    return browser.getCurrentUrl().then(url => {
+      const indiceInicioUrl = url.indexOf('#') + 1;
+      return url.substr(indiceInicioUrl);
+    });
   }
 
-  pegarInput(valorFormControlName: string, valorCampo: string) {
+  definirValor(valorFormControlName: string, valorCampo: string) {
     return element(by.css(`input[formControlName="${valorFormControlName}"]`)).sendKeys(valorCampo);
   }
 
-  pegarBotaoLogin() {
+  obterBotaoLogin() {
     return element(by.buttonText('login'));
   }
 }

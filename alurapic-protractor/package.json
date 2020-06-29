@@ -7,7 +7,7 @@
     "build": "ng build",
     "test": "ng test --source-map --code-coverage",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e --no-webdriver-update"
   },
   "private": true,
   "dependencies": {
@@ -48,7 +48,7 @@
     "karma-jasmine-html-reporter": "^1.4.2",
     "karma-ng-html2js-preprocessor": "1.0.0",
     "karma-verbose-reporter": "0.0.6",
-    "protractor": "^6.0.0",
+    "protractor": "^7.0.0",
     "ts-node": "~8.4.1",
     "tslint": "~5.20.0",
     "typescript": "~3.5.3"

@@ -14,7 +14,7 @@ export class SigninPage {
   }
 
   definirValor(valorFormControlName: string, valorCampo: string) {
-    return element(by.css(`input[formControlName="${valorFormControlName}"]`)).sendKeys(valorCampo);
+    return element(by.formControlName(valorFormControlName)).sendKeys(valorCampo);
   }
 
   obterBotaoLogin() {

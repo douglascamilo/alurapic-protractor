@@ -1,4 +1,5 @@
 import { browser, by, element } from 'protractor';
+import { PagesHelper } from './helper.po';
 
 export class SigninPage {
 
@@ -7,14 +8,11 @@ export class SigninPage {
   }
 
   obterUrlAtual() {
-    return browser.getCurrentUrl().then(url => {
-      const indiceInicioUrl = url.indexOf('#') + 1;
-      return url.substr(indiceInicioUrl);
-    });
+    return PagesHelper.obterUrlAtual();
   }
 
   definirValor(valorFormControlName: string, valorCampo: string) {
-    return element(by.formControlName(valorFormControlName)).sendKeys(valorCampo);
+    return PagesHelper.definirValor(valorFormControlName, valorCampo);
   }
 
   obterBotaoLogin() {

@@ -1,10 +1,11 @@
 import { SigninPage } from './signin.po';
+import { PagesHelper } from './helper.po';
 
 describe('Testando tela Home', () => {
-  let signinPage: SigninPage;
+  let signinPage = new SigninPage();
 
   beforeEach(() => {
-    signinPage = new SigninPage();
+    PagesHelper.travaExecucao();
   });
 
   it('deve ir para home', () => {
@@ -20,12 +21,4 @@ describe('Testando tela Home', () => {
 
     expect(signinPage.obterUrlAtual()).toBe(`/user/${nomeUsuario}`);
   });
-
-  // it('atrasar termino da execucao', () => {
-  //   let valor = 0;
-  //
-  //   while (valor < 999999999) {
-  //     valor++;
-  //   }
-  // });
 });

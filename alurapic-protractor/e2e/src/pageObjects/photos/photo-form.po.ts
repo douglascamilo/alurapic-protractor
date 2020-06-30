@@ -12,10 +12,14 @@ export class PhotoFormPage {
 
   carregarImagem() {
     const diretorioImagem = path.resolve(__dirname, imagem);
-    PagesHelper.definirValor('file', diretorioImagem);
+    return PagesHelper.definirValor('file', diretorioImagem);
   }
 
-  pegarBotaoUpload() {
+  obterBotaoUpload() {
     return element(by.buttonText('Upload'));
+  }
+
+  comentarImagem(comentario: string) {
+    return PagesHelper.definirValor('description', comentario);
   }
 }

@@ -5,9 +5,11 @@ import { SignupPage } from './pageObjects/home/signup.po';
 describe('Testando tela Home', () => {
   let signinPage = new SigninPage();
   let signupPage = new SignupPage();
+  const nomeUsuario = 'test1';
+  const senhaUsuario = 'test_password';
 
   afterEach(() => {
-    PagesHelper.travaExecucao(1250);
+    PagesHelper.travaExecucao();
   });
 
   it('navegar para formulario novo usuario', () => {
@@ -18,8 +20,8 @@ describe('Testando tela Home', () => {
   it('preencher formulario', () => {
     signupPage.definirValor('email', 'test_1@gmail.com');
     signupPage.definirValor('fullName', 'Full Name');
-    signupPage.definirValor('userName', 'test1');
-    signupPage.definirValor('password', 'test_password');
+    signupPage.definirValor('userName', nomeUsuario);
+    signupPage.definirValor('password', senhaUsuario);
 
     signupPage.obterBotaoRegister().click();
   });
@@ -30,9 +32,8 @@ describe('Testando tela Home', () => {
   });
 
   it('deve fazer login', () => {
-    const nomeUsuario = 'flavio';
     signinPage.definirValor('userName', nomeUsuario);
-    signinPage.definirValor('password', '123');
+    signinPage.definirValor('password', senhaUsuario);
     signinPage.obterBotaoLogin().click();
 
     expect(signinPage.obterUrlAtual()).toBe(`/user/${nomeUsuario}`);

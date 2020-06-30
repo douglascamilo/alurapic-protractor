@@ -3,7 +3,7 @@ import { browser, by, element } from 'protractor';
 export class PagesHelper {
 
   static travaExecucao(timeMillis?: number) {
-    browser.sleep(timeMillis || 750);
+    browser.sleep(timeMillis || 1000);
   }
 
   static obterUrlAtual() {

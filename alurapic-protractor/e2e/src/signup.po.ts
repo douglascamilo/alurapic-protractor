@@ -12,11 +12,11 @@ export class SignupPage {
     return PagesHelper.obterUrlAtual();
   }
 
-  obterLinkLogout() {
-    return element(by.id('link-logout'));
-  }
-
   definirValor(valorFormControlName: string, valorCampo: string) {
     return PagesHelper.definirValor(valorFormControlName, valorCampo);
+  }
+
+  obterBotaoRegister() {
+    return element(by.buttonText('Register'));
   }
 }

@@ -1,5 +1,5 @@
 import { browser, by, element } from 'protractor';
-import { PagesHelper } from './helper.po';
+import { PagesHelper } from '../helper.po';
 
 export class SignupPage {
   public readonly urlPagina = '/home/signup';

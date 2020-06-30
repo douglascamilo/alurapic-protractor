@@ -1,6 +1,6 @@
-import { SigninPage } from './signin.po';
-import { PagesHelper } from './helper.po';
-import { SignupPage } from './signup.po';
+import { SigninPage } from './pageObjects/home/signin.po';
+import { PagesHelper } from './pageObjects/helper.po';
+import { SignupPage } from './pageObjects/home/signup.po';
 
 describe('Testando tela Home', () => {
   let signinPage = new SigninPage();
